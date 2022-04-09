@@ -4,7 +4,6 @@
 
 import praw
 import time
-from datetime import datetime as dt
 import traceback
 import sys
 
@@ -22,7 +21,7 @@ removal_timespan = (60*60*24*7)
 # Reddit login.  Insert your login credentials below. 
 def reddit_login():
 	reddit = praw.Reddit(
-							user_agent = 'Reports Remove Bot v.1 by u/buckrowdy',
+							user_agent = 'Reports Removal Bot v.1 by u/buckrowdy',
 							client_id = '',
 							client_secret = '',
 							username = '',
@@ -37,7 +36,7 @@ def report_remove_compile(subreddit):
 	links_list = []
 	
 	# Saves links in a text file.  If file does not exist it will be created.
-	with open("/home/pi/bots/ModGuide/links_list.txt", "w+") as f:
+	with open("path/to/your/file/links_list.txt", "w+") as f:
 		print("Compiling list of removed threads...")
 		#right_now = time.time()
 		removal_epoch = (time.time() - removal_timespan)
